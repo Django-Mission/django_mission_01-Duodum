@@ -21,7 +21,8 @@ def result_lotto(request):
             lotto.append(random.randint(1, 45))
             lotto = list(set(lotto))
         
+        # 정렬
         result_lotto.append(sorted(lotto))
 
-    # 정렬 및 응답
+    # 응답
     return render(request, 'lotto_result.html', {'num_of_game':num_of_game,'result':result_lotto})
